@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 USER_ID=$(id -u)
 LOGS_FOLDER="/var/log/shell-roboshop"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
@@ -12,12 +10,6 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-handle_error(){
-    echo "Error occured at line number: $1, Error Command: $2"
-}
-
-trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
 
 check_root(){
 if [ $USER_ID -gt 0 ]; then
