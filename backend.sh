@@ -63,10 +63,11 @@ else
     VALIDATE $? "Installing mysql"
 fi
 
-if mysql -h "$MYSQL_HOST" -uroot -p"${mysql_root_password}" -e 'use transactions' &>>$LOGS_FILE; then
+mysql -h $MYSQL_HOST -uroot -p${PASSWORD} -e 'use transactions' &>>$LOGS_FILE
+if [ $? -eq 0 ]; then
     echo -e "Backend schema already Loaded ... $Y SKIPPING $N"
 else
-    mysql -h "$MYSQL_HOST" -uroot -p"${mysql_root_password}" < /app/schema/backend.sql &>>$LOGS_FILE
+    mysql -h $MYSQL_HOST -uroot -p${PASSWORD} < /app/schema/backend.sql &>>$LOGS_FILE
     VALIDATE $? "Loading backend schema"
 fi
 
