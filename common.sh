@@ -3,6 +3,7 @@
 USER_ID=$(id -u)
 LOGS_FOLDER="/var/log/shell-roboshop"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
+SCRIPT_DIR=$PWD  # or $(pwd)
 mysql_root_password="ExpenseApp@1"
 DOMAIN_NAME="mysql.dawsmani.site"
 
