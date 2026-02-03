@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y &>>$LOGS_FILE
     VALIDATE $? "Installing NGINX..."
 else
-    echo -e "NginX already installed.... $Y SKYPPING $N"
+    echo -e "NginX already installed.... $Y SKIPPING $N"
 fi
 systemctl enable nginx &>>$LOGS_FILE
 VALIDATE $? "Enabling NGINX"
