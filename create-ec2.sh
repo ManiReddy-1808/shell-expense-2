@@ -63,5 +63,7 @@ do
         ]
     }
     '
-    echo "Record updated for $instance with IP $IP"
+    echo "Record updated for $name with IP $IP"
+    echo "--------------------------------"
+    echo ""
 done
